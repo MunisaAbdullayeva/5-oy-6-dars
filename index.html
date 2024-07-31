@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+
+<body>
+    <header>
+        <nav class="navbar bg-base-100">
+            <div class="container mx-auto max-w-[90%]">
+                <div class="flex-1">
+                    <a class="btn btn-accent text-xl">EVOS</a>
+                </div>
+                <div class="flex-none">
+                    <div class="dropdown dropdown-end">
+                        <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
+                            <div class="indicator">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                        d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                                <span class="badge badge-sm indicator-item">8</span>
+                            </div>
+                        </div>
+                        <div tabindex="0"
+                            class="card card-compact dropdown-content bg-base-100 z-[999] mt-3 w-96 shadow">
+                            <div class="card-body">
+                                <div id="busket-list">
+                                   
+                                </div>
+
+                                <span class="text-lg font-bold" id="countBusket">8 Items</span>
+                                <span class="text-info">Subtotal: <span id="subTotal">0</span></span>
+                                <div class="card-actions">
+                                    <button class="btn btn-primary btn-block">View cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dropdown dropdown-end">
+                        <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
+                            <div class="w-10 rounded-full">
+                                <img alt="Tailwind CSS Navbar component"
+                                    src="https://img.daisyui.com/images/stock/photo-1534528741775-53994a69daeb.jpg" />
+                            </div>
+                        </div>
+                        <ul tabindex="0"
+                            class="menu menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow">
+                            <li>
+                                <a class="justify-between">
+                                    Profile
+                                    <span class="badge">New</span>
+                                </a>
+                            </li>
+                            <li><a>Settings</a></li>
+                            <li><a>Logout</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </nav><!-- showcase -->
+        <div class="container mx-auto max-w-[90%] flex gap-10 mt-5">
+            <div class="w-2/3 rounded-box overflow-hidden h-full">
+                <p>Best Fast foods:</p>
+                <div class="carousel w-full bg-base-300 p-5 rounded-box" id="topProducts">
+                    <!-- <div id="item1" class="carousel-item w-full">
+                        <img src="https://img.daisyui.com/images/stock/photo-1625726411847-8cbb60cc71e6.jpg"
+                            class="w-full" />
+                    </div>
+                    <div id="item2" class="carousel-item w-full">
+                        <img src="https://img.daisyui.com/images/stock/photo-1609621838510-5ad474b7d25d.jpg"
+                            class="w-full" />
+                    </div>
+                    <div id="item3" class="carousel-item w-full">
+                        <img src="https://img.daisyui.com/images/stock/photo-1414694762283-acccc27bca85.jpg"
+                            class="w-full" />
+                    </div>
+                    <div id="item4" class="carousel-item w-full">
+                        <img src="https://img.daisyui.com/images/stock/photo-1665553365602-b2fb8e5d1707.jpg"
+                            class="w-full" />
+                    </div> -->
+                </div>
+                <div class="flex w-full justify-center gap-2 py-2" id="swiper-buttons">
+                    <!-- <a href="#item1" class="btn btn-xs">1</a>
+                    <a href="#item2" class="btn btn-xs">2</a>
+                    <a href="#item3" class="btn btn-xs">3</a>
+                    <a href="#item4" class="btn btn-xs">4</a> -->
+                </div>
+            </div>
+
+            <div class="w-1/3 ">
+                <p>Arzon Fast foodlar: </p>
+                <div class="carousel carousel-vertical rounded-box h-full w-full max-h-[223px]" id="arzonProducts">
+
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto max-w-[90%] flex gap-3 mt-10">
+        <aside class="w-1/4 text-xl font-bold">
+            <ul class="menu bg-base-200 rounded-box w-full">
+                <li>
+                    <details>
+                        <summary>Fast food</summary>
+                        <ul>
+                            <li><a>Lavash</a></li>
+                            <li><a>Achchiq Lavash</a></li>
+                            <li><a>Cheese Lavash</a></li>
+                            <li><a>Tandir Lavash</a></li>
+                            <li><a>CheeseBurger</a></li>
+                            <li><a>DoubleBurger</a></li>
+                            <li><a>DoubleCheeseBurger</a></li>
+                            <li><a>Hot-Dog</a></li>
+                            <li><a>Karalevskiy Hot-dog</a></li>
+
+                        </ul>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>Salat</summary>
+                        <ul>
+                            <li><a>Alivye</a></li>
+                            <li><a>Cezar</a></li>
+                            <li><a>Mujskoy kapriz</a></li>
+                        </ul>
+                    </details>
+                </li>
+                <li>
+                    <details>
+                        <summary>Ichimliklar</summary>
+                        <ul>
+                            <li><a>Pepsi</a></li>
+                            <li><a>Fanta</a></li>
+                            <li><a>Coca-cola</a></li>
+                            <li><a>Sprite</a></li>
+                            <li><a>Mirinda</a></li>
+                            <li><a>Moxito</a></li>
+                            <li><a>Latte</a></li>
+                        </ul>
+                    </details>
+                </li><li>
+                    <details>
+                        <summary>Morojniy</summary>
+                        <ul>
+                            <li><a>Pepsi</a></li>
+                            <li><a>Fanta</a></li>
+                            <li><a>Coca-cola</a></li>
+                            <li><a>Sprite</a></li>
+                            <li><a>Mirinda</a></li>
+                            <li><a>Moxito</a></li>
+                            <li><a>Latte</a></li>
+                        </ul>
+                    </details>
+                </li>
+            </ul>
+        </aside>
+
+        <section class="w-3/4 flex flex-wrap px-5 bg-base-200 p-2 gap-x-[2%] gap-y-5" id="productsList">
+           
+            <!-- <div class="bg-base-300 rounded-box w-full max-w-[31%]">
+                <figure>
+                    <img src="https://avatars.mds.yandex.net/get-eda/3595513/ab09d8126be114be4d2c4fe0291604ad/M_height"
+                        alt="" class="w-full h-56">
+                </figure>
+                <div class="body p-2">
+                    <h3 class="text-accent font-bold" id="title">Lavash Mol goshti</h3>
+                    <div id="ingredients" class="flex flex-wrap gap-1 text-xs py-5">
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                    </div>
+
+                    <div id="info" class="flex justify-between items-center">
+                        <button class="btn btn-outline btn-warning" id="price">25.000uzs</button>
+                        <button class="btn btn-outline btn-warning">Подробнее</button>
+                    </div>
+
+                    <div id="info" class="flex justify-between items-center mt-2">
+                        <button class="btn btn btn-primary text-white w-full">Купить</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-base-300 rounded-box w-full max-w-[31%]">
+                <figure>
+                    <img src="https://avatars.mds.yandex.net/get-eda/3595513/ab09d8126be114be4d2c4fe0291604ad/M_height"
+                        alt="" class="w-full h-56">
+                </figure>
+                <div class="body p-2">
+                    <h3 class="text-accent font-bold" id="title">Lavash Mol goshti</h3>
+                    <div id="ingredients" class="flex flex-wrap gap-1 text-xs py-5">
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                    </div><div id="info" class="flex justify-between items-center">
+                        <button class="btn btn-outline btn-warning" id="price">25.000uzs</button>
+                        <button class="btn btn-outline btn-warning">Подробнее</button>
+                    </div>
+
+                    <div id="info" class="flex justify-between items-center mt-2">
+                        <button class="btn btn btn-primary text-white w-full">Купить</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-base-300 rounded-box w-full max-w-[31%]">
+                <figure>
+                    <img src="https://avatars.mds.yandex.net/get-eda/3595513/ab09d8126be114be4d2c4fe0291604ad/M_height"
+                        alt="" class="w-full h-56">
+                </figure>
+                <div class="body p-2">
+                    <h3 class="text-accent font-bold" id="title">Lavash Mol goshti</h3>
+                    <div id="ingredients" class="flex flex-wrap gap-1 text-xs py-5">
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                    </div>
+
+                    <div id="info" class="flex justify-between items-center">
+                        <button class="btn btn-outline btn-warning" id="price">25.000uzs</button>
+                        <button class="btn btn-outline btn-warning">Подробнее</button>
+                    </div>
+
+                    <div id="info" class="flex justify-between items-center mt-2">
+                        <button class="btn btn btn-primary text-white w-full">Купить</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-base-300 rounded-box w-full max-w-[31%]">
+                <figure>
+                    <img src="https://avatars.mds.yandex.net/get-eda/3595513/ab09d8126be114be4d2c4fe0291604ad/M_height"
+                        alt="" class="w-full h-56">
+                </figure>
+                <div class="body p-2">
+                    <h3 class="text-accent font-bold" id="title">Lavash Mol goshti</h3>
+                    <div id="ingredients" class="flex flex-wrap gap-1 text-xs py-5">
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                    </div>
+
+                    <div id="info" class="flex justify-between items-center">
+                        <button class="btn btn-outline btn-warning" id="price">25.000uzs</button>
+                        <button class="btn btn-outline btn-warning">Подробнее</button>
+                    </div><div id="info" class="flex justify-between items-center">
+                        <button class="btn btn-outline btn-warning" id="price">25.000uzs</button>
+                        <button class="btn btn-outline btn-warning">Подробнее</button>
+                    </div>
+
+                    <div id="info" class="flex justify-between items-center mt-2">
+                        <button class="btn btn btn-primary text-white w-full">Купить</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-base-300 rounded-box w-full max-w-[31%]">
+                <figure>
+                    <img src="https://avatars.mds.yandex.net/get-eda/3595513/ab09d8126be114be4d2c4fe0291604ad/M_height"
+                        alt="" class="w-full h-56">
+                </figure>
+                <div class="body p-2">
+                    <h3 class="text-accent font-bold" id="title">Lavash Mol goshti</h3>
+                    <div id="ingredients" class="flex flex-wrap gap-1 text-xs py-5">
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                    </div>
+
+                    <div id="info" class="flex justify-between items-center">
+                        <button class="btn btn-outline btn-warning" id="price">25.000uzs</button>
+                        <button class="btn btn-outline btn-warning">Подробнее</button>
+                    </div>
+
+                    <div id="info" class="flex justify-between items-center mt-2">
+                        <button class="btn btn btn-primary text-white w-full">Купить</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-base-300 rounded-box w-full max-w-[31%]">
+                <figure>
+                    <img src="https://avatars.mds.yandex.net/get-eda/3595513/ab09d8126be114be4d2c4fe0291604ad/M_height"
+                        alt="" class="w-full h-56">
+                </figure>
+                <div class="body p-2">
+                    <h3 class="text-accent font-bold" id="title">Lavash Mol goshti</h3>
+                    <div id="ingredients" class="flex flex-wrap gap-1 text-xs py-5">
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                    </div>
+
+                    <div id="info" class="flex justify-between items-center">
+                        <button class="btn btn-outline btn-warning" id="price">25.000uzs</button>
+                        <button class="btn btn-outline btn-warning">Подробнее</button>
+                    </div><div id="info" class="flex justify-between items-center mt-2">
+                        <button class="btn btn btn-primary text-white w-full">Купить</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-base-300 rounded-box w-full max-w-[31%]">
+                <figure>
+                    <img src="https://avatars.mds.yandex.net/get-eda/3595513/ab09d8126be114be4d2c4fe0291604ad/M_height"
+                        alt="" class="w-full h-56">
+                </figure>
+                <div class="body p-2">
+                    <h3 class="text-accent font-bold" id="title">Lavash Mol goshti</h3>
+                    <div id="ingredients" class="flex flex-wrap gap-1 text-xs py-5">
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                    </div>
+
+                    <div id="info" class="flex justify-between items-center">
+                        <button class="btn btn-outline btn-warning" id="price">25.000uzs</button>
+                        <button class="btn btn-outline btn-warning">Подробнее</button>
+                    </div>
+
+                    <div id="info" class="flex justify-between items-center mt-2">
+                        <button class="btn btn btn-primary text-white w-full">Купить</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-base-300 rounded-box w-full max-w-[31%]">
+                <figure>
+                    <img src="https://avatars.mds.yandex.net/get-eda/3595513/ab09d8126be114be4d2c4fe0291604ad/M_height"
+                        alt="" class="w-full h-56">
+                </figure>
+                <div class="body p-2">
+                    <h3 class="text-accent font-bold" id="title">Lavash Mol goshti</h3>
+                    <div id="ingredients" class="flex flex-wrap gap-1 text-xs py-5">
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                        <div class="badge badge-primary flex-1">
+                            Lavash hamri
+                        </div>
+                    </div>
+
+                    <div id="info" class="flex justify-between items-center">
+                        <button class="btn btn-outline btn-warning" id="price">25.000uzs</button>
+                        <button class="btn btn-outline btn-warning">Подробнее</button>
+                    </div>
+
+                    <div id="info" class="flex justify-between items-center mt-2">
+                        <button class="btn btn btn-primary text-white w-full">Купить</button>
+                    </div>
+                </div>
+            </div> -->
+
+        </section>
+    </main>
+
+    <script src="./main.js"></script>
+</body>
